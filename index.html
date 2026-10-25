@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Portfolio of Virupaksha Tippa — Senior Technical Consultant focused on Java backend engineering, automation, and software architecture.">
+  <title>Virupaksha Tippa | Software Engineer</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1020; --panel:#111a2e; --line:rgba(255,255,255,.12); --text:#f4f7ff; --muted:#a7b3ca; --accent:#a3e635; --accent2:#67e8f9; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:radial-gradient(ellipse at 12% 0%, rgba(103,232,249,.10), transparent 34rem),radial-gradient(ellipse at 92% 18%, rgba(163,230,53,.08), transparent 32rem),var(--bg); color:var(--text); font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible { outline:2px solid var(--accent2); outline-offset:4px; border-radius:6px; }
+    .wrap { width:min(1100px, calc(100% - 40px)); margin:auto; }
+    header { position:sticky; top:0; z-index:10; border-bottom:1px solid var(--line); background:rgba(11,16,32,.82); backdrop-filter:blur(16px); }
+    nav { min-height:72px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+    .brand { font-weight:800; letter-spacing:-.04em; font-size:1.08rem; }
+    .brand span { color:var(--accent); }
+    .navlinks { display:flex; gap:24px; flex-wrap:wrap; color:var(--muted); font-size:.92rem; }
+    .navlinks a:hover { color:var(--accent); }
+    .hero { padding:105px 0 88px; display:grid; grid-template-columns:minmax(0,1.4fr) minmax(250px,.6fr); gap:42px; align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:10px; text-transform:uppercase; letter-spacing:.16em; color:var(--accent); font-size:.76rem; font-weight:800; }
+    .dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--accent); box-shadow:0 0 18px var(--accent); }
+    h1 { font-size:clamp(2.8rem,7vw,5.3rem); letter-spacing:-.075em; line-height:1.02; margin:22px 0; max-width:850px; }
+    h1 .highlight { color:var(--accent); }
+    .lead { max-width:680px; color:var(--muted); font-size:1.15rem; }
+    .actions { display:flex; gap:13px; flex-wrap:wrap; margin-top:30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:46px; padding:11px 18px; border:1px solid var(--line); border-radius:12px; font-weight:750; font-size:.92rem; transition:transform .2s,border-color .2s,background .2s; }
+    .btn:hover { transform:translateY(-2px); border-color:var(--accent); }
+    .btn.primary { background:var(--accent); color:#111827; border-color:var(--accent); }
+    .profile-card { border:1px solid var(--line); background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02)); border-radius:25px; padding:27px; box-shadow:0 24px 80px rgba(0,0,0,.25); }
+    .monogram { width:76px; height:76px; display:grid; place-items:center; border-radius:20px; color:#101827; font-weight:900; font-size:1.85rem; letter-spacing:-.08em; background:linear-gradient(135deg,var(--accent),var(--accent2)); }
+    .profile-card h2 { margin:19px 0 4px; font-size:1.25rem; letter-spacing:-.03em; }
+    .profile-card p { margin:0; color:var(--muted); font-size:.94rem; }
+    .profile-meta { display:grid; gap:10px; border-top:1px solid var(--line); margin-top:23px; padding-top:19px; color:var(--muted); font-size:.9rem; }
+    .profile-meta strong { color:var(--text); font-weight:650; }
+    section { padding:68px 0; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:25px; margin-bottom:27px; }
+    .kicker { color:var(--accent2); text-transform:uppercase; letter-spacing:.15em; font-size:.75rem; font-weight:800; }
+    h2.section-title { margin:7px 0 0; font-size:clamp(1.9rem,4vw,2.7rem); line-height:1.15; letter-spacing:-.055em; }
+    .section-desc { color:var(--muted); max-width:480px; margin:0; }
+    .about-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:20px; }
+    .panel { background:rgba(17,26,46,.82); border:1px solid var(--line); border-radius:20px; padding:25px; }
+    .panel p { color:var(--muted); margin:0; }
+    .pill-row { display:flex; gap:9px; flex-wrap:wrap; margin-top:19px; }
+    .pill { display:inline-flex; border:1px solid var(--line); padding:6px 10px; border-radius:999px; color:#dce6f8; background:rgba(255,255,255,.035); font-size:.82rem; }
+    .skill-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .skill { padding:19px; border-radius:16px; border:1px solid var(--line); background:rgba(17,26,46,.65); }
+    .skill .symbol { font-size:1.3rem; }
+    .skill h3 { font-size:1rem; margin:10px 0 4px; }
+    .skill p { color:var(--muted); font-size:.88rem; line-height:1.55; margin:0; }
+    .project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:17px; }
+    .project { display:flex; flex-direction:column; min-height:265px; border:1px solid var(--line); border-radius:20px; padding:24px; background:linear-gradient(160deg,rgba(17,26,46,.9),rgba(17,26,46,.5)); transition:transform .2s,border-color .2s; }
+    .project:hover { transform:translateY(-3px); border-color:rgba(163,230,53,.55); }
+    .project-top { display:flex; justify-content:space-between; align-items:center; gap:14px; }
+    .project-icon { width:44px; height:44px; display:grid; place-items:center; border-radius:13px; background:rgba(163,230,53,.12); font-size:1.25rem; }
+    .project-label { color:var(--accent); font-size:.75rem; text-transform:uppercase; letter-spacing:.1em; font-weight:800; }
+    .project h3 { margin:19px 0 8px; font-size:1.22rem; letter-spacing:-.03em; }
+    .project p { color:var(--muted); margin:0 0 19px; font-size:.94rem; }
+    .project .pill-row { margin-top:auto; margin-bottom:17px; }
+    .project-links { display:flex; gap:17px; flex-wrap:wrap; color:var(--accent2); font-size:.9rem; font-weight:700; }
+    .project-links a:hover { text-decoration:underline; }
+    .note { margin-top:18px; padding:14px 17px; border-left:3px solid var(--accent2); color:var(--muted); background:rgba(103,232,249,.06); border-radius:0 12px 12px 0; font-size:.88rem; }
+    .learning-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .learning { border:1px solid var(--line); background:rgba(17,26,46,.55); padding:16px 18px; border-radius:13px; }
+    .learning strong { display:block; margin-bottom:3px; }
+    .learning span { color:var(--muted); font-size:.88rem; }
+    .contact-panel { display:flex; align-items:center; justify-content:space-between; gap:28px; border:1px solid rgba(163,230,53,.3); background:linear-gradient(110deg,rgba(163,230,53,.1),rgba(103,232,249,.045)); border-radius:24px; padding:30px; }
+    .contact-panel h2 { margin:0 0 6px; font-size:clamp(1.6rem,3vw,2.2rem); letter-spacing:-.05em; }
+    .contact-panel p { margin:0; color:var(--muted); }
+    footer { margin-top:62px; border-top:1px solid var(--line); padding:24px 0 36px; color:var(--muted); font-size:.87rem; }
+    .footer-row { display:flex; justify-content:space-between; gap:15px; flex-wrap:wrap; }
+    @media (max-width:800px) { .hero { grid-template-columns:1fr; padding:75px 0 60px; } .profile-card { max-width:440px; } .about-grid { grid-template-columns:1fr; } .skill-grid { grid-template-columns:repeat(2,1fr); } .section-head { align-items:start; flex-direction:column; } }
+    @media (max-width:540px) { .wrap { width:min(100% - 28px,1100px); } nav { align-items:flex-start; flex-direction:column; padding:15px 0; gap:10px; } .navlinks { gap:14px; font-size:.84rem; } .hero { padding-top:60px; } .project-grid,.learning-grid { grid-template-columns:1fr; } .contact-panel { align-items:flex-start; flex-direction:column; padding:24px; } .skill-grid { gap:10px; } .skill { padding:15px; } section { padding:53px 0; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">VT<span>.</span></a>
+      <div class="navlinks">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#learning">Learning</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap hero" id="home">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Software engineering · India</div>
+        <h1>Building useful software with <span class="highlight">clean thinking.</span></h1>
+        <p class="lead">I'm Virupaksha Tippa, a Senior Technical Consultant focused on Java backend engineering, automation, and maintainable software. I'm also exploring AI/LLM applications and modern developer workflows.</p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">Explore projects <span aria-hidden="true">↘</span></a>
+          <a class="btn" href="https://github.com/Veerut1" target="_blank" rel="noreferrer">Visit GitHub ↗</a>
+        </div>
+      </div>
+      <aside class="profile-card" aria-label="Profile overview">
+        <div class="monogram" aria-hidden="true">VT</div>
+        <h2>Virupaksha Tippa</h2>
+        <p>Senior Technical Consultant · Java Backend Engineer</p>
+        <div class="profile-meta">
+          <div>⌘ &nbsp; <strong>Backend:</strong> Java, Spring Boot, REST APIs</div>
+          <div>⚙ &nbsp; <strong>Engineering:</strong> Automation, architecture, clean code</div>
+          <div>✦ &nbsp; <strong>Exploring:</strong> AI/LLM apps, cloud workflows</div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="kicker">A little about me</div><h2 class="section-title">Engineering that solves real problems.</h2></div>
+          <p class="section-desc">I enjoy turning complex requirements into understandable, maintainable software and continuously learning through hands-on projects.</p>
+        </div>
+        <div class="about-grid">
+          <div class="panel"><p>My interests span backend services, API design, database-backed applications, test automation, and software architecture. I value readable code, thoughtful design decisions, and solutions that are practical to operate and maintain.</p></div>
+          <div class="panel"><p><strong style="color:var(--text)">Current learning themes</strong></p><div class="pill-row"><span class="pill">AI / LLM Apps</span><span class="pill">Python</span><span class="pill">Cloud Deployment</span><span class="pill">System Design</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Toolkit</div><h2 class="section-title">Skills & technologies</h2></div><p class="section-desc">Technologies and engineering practices I work with or continue to develop.</p></div>
+        <div class="skill-grid">
+          <article class="skill"><div class="symbol">☕</div><h3>Backend</h3><p>Java, Spring Boot, Spring Framework, REST APIs, JPA, Hibernate</p></article>
+          <article class="skill"><div class="symbol">▤</div><h3>Data</h3><p>SQL, Oracle, MySQL, relational data modelling</p></article>
+          <article class="skill"><div class="symbol">⌘</div><h3>Web</h3><p>JavaScript, React, HTML, CSS</p></article>
+          <article class="skill"><div class="symbol">⚙</div><h3>Engineering</h3><p>Microservices, design patterns, clean code, Git, Maven, Linux</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Selected work</div><h2 class="section-title">Projects</h2></div><p class="section-desc">A selection from my repositories. See GitHub for more experiments and source code.</p></div>
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-top"><div class="project-icon" aria-hidden="true">📍</div><div class="project-label">Featured project</div></div>
+            <h3>Geo Location Attendance</h3>
+            <p>A web-based employee check-in application for daily attendance workflows, with a React frontend and Firebase/Firestore integration.</p>
+            <div class="pill-row"><span class="pill">JavaScript</span><span class="pill">React</span><span class="pill">Firebase</span><span class="pill">Netlify</span></div>
+            <div class="project-links"><a href="https://github.com/Veerut1/geo-location-attendance" target="_blank" rel="noreferrer">View source ↗</a><a href="https://geo-location-checkin.netlify.app/" target="_blank" rel="noreferrer">Live demo ↗</a></div>
+          </article>
+          <article class="project">
+            <div class="project-top"><div class="project-icon" aria-hidden="true">🧪</div><div class="project-label">Demo / experiment</div></div>
+            <h3>Azure Bug Creator Demo</h3>
+            <p>A C# demo repository. Add a short case study describing the problem, implementation, and what you learned as you refine this project.</p>
+            <div class="pill-row"><span class="pill">C#</span><span class="pill">Developer tools</span></div>
+            <div class="project-links"><a href="https://github.com/Veerut1/AzureBugCreatorDemo" target="_blank" rel="noreferrer">View repository ↗</a></div>
+          </article>
+        </div>
+        <div class="note">Portfolio tip: keep original work in “Projects” and identify forked repositories as learning resources. Before using the attendance application with real employee data, review its documented Firebase security considerations.</div>
+      </div>
+    </section>
+
+    <section id="learning">
+      <div class="wrap">
+        <div class="section-head"><div><div class="kicker">Continuous improvement</div><h2 class="section-title">Learning & references</h2></div><p class="section-desc">Repositories used for study, examples, and reference—not presented as original projects.</p></div>
+        <div class="learning-grid">
+          <a class="learning" href="https://github.com/Veerut1/awesome-llm-apps-learning" target="_blank" rel="noreferrer"><strong>🤖 LLM Apps Learning ↗</strong><span>Examples and references for exploring LLM applications.</span></a>
+          <a class="learning" href="https://github.com/Veerut1/Clean-Code-Notes" target="_blank" rel="noreferrer"><strong>📘 Clean Code Notes ↗</strong><span>Study notes on readable, maintainable software.</span></a>
+          <a class="learning" href="https://github.com/Veerut1/deploy-spring-boot-aws-eb" target="_blank" rel="noreferrer"><strong>☁️ Spring Boot on AWS ↗</strong><span>Reference material for Elastic Beanstalk deployment.</span></a>
+          <a class="learning" href="https://github.com/Veerut1/springboot-javafx-tutorial" target="_blank" rel="noreferrer"><strong>🖥️ Spring Boot + JavaFX ↗</strong><span>A reference tutorial for integrating Spring Boot and JavaFX.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-panel">
+          <div><div class="kicker">Let's connect</div><h2>Interested in engineering and new ideas?</h2><p>Explore my repositories and follow what I'm building next.</p></div>
+          <a class="btn primary" href="https://github.com/Veerut1" target="_blank" rel="noreferrer">Connect on GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-row"><span>© <span id="year"></span> Virupaksha Tippa</span><span>Designed for clarity. Built with HTML & CSS.</span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
